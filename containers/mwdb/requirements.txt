@@ -1,0 +1,2 @@
+mwdb-core==2.7.0 
+karton-core==4.3.0

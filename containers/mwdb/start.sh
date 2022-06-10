@@ -9,5 +9,5 @@ done
 echo "Configuring mwdb-core instance"
 mwdb-core configure --quiet basic
 
-python -c 'import minio; minio.Minio("minio:9000", access_key="mwdb", secret_key="mwdbmwdb", secure=False).make_bucket("mwdb")'
+python init_minio.py
 exec uwsgi --ini /app/uwsgi.ini
