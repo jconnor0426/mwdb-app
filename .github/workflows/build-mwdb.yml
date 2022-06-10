@@ -37,7 +37,7 @@ jobs:
         with:
           context: ./containers/mwdb/
           file: ./containers/mwdb/Dockerfile
-          images: ${{ env.REGISTRY }}/mwdb
+          images: ${{ env.REGISTRY }}/jconnor0426/mwdb
 
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
