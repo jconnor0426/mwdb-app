@@ -11,4 +11,6 @@ COPY ./uwsgi.ini ./
 COPY ./start.sh ./
 COPY ./init_minio.py ./
 
+RUN chmod +x start.sh
+
 CMD ["/app/start.sh"]
