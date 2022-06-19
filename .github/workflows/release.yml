@@ -34,7 +34,7 @@ jobs:
       - name: Get submodule container image updates
         run: |
           for submodule_info in $(git submodule status --cached | grep submodules); do 
-            
+            echo Debugging:"${submodule_info}"
             SHORT_SHA=$(echo $submodule_info | cut -d " " -f 2)
             SHORT_SHA=$(git rev-parse --short $SHORT_SHA)
             IMAGE=$(echo $submodule_info | cut -d " " -f 3)
