@@ -1,0 +1,3 @@
+[submodule "containers/karton-yaramatcher"]
+	path = containers/karton-yaramatcher
+	url = https://github.com/jconnor0426/karton-yaramatcher
