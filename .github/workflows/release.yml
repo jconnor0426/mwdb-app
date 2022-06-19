@@ -41,6 +41,6 @@ jobs:
             echo $SHORT_SHA
             IMAGE=$(echo $submodule_info | cut -d " " -f 3)
 
-            echo $IMAGE:$SHORT_SHA
+            echo ${IMAGE}:${SHORT_SHA}
             
           done
