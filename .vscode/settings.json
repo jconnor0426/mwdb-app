@@ -1,3 +1,6 @@
 {
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": "file:///c%3A/Users/jconn/Documents/GitHub/mwdb-app/containers/karton-yaramatcher/.github/workflows/build.yml"
+    }
 }
