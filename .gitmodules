@@ -1,3 +1,6 @@
 [submodule "containers/karton-yaramatcher"]
 	path = submodules/karton-yaramatcher
 	url = https://github.com/jconnor0426/karton-yaramatcher
+[submodule "submodules/karton-config-extractor"]
+	path = submodules/karton-config-extractor
+	url = https://github.com/jconnor0426/karton-config-extractor
