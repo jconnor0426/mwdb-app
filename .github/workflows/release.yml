@@ -1,0 +1,29 @@
+name: Push updated values for application containers to the config repo
+
+on:
+  release:
+    types: [published]
+  push:
+    branches: ['main']
+
+jobs:
+  push-updates-to-config:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Clone supercharge docs repository
+        uses: actions/checkout@v2
+        with:
+          repository: jconnor0426/argocd-monitoring-mwdb
+          path: config-repo
+          ref: main
+      
+      - name: output config repo
+        run: |
+          ls -r config-repo
