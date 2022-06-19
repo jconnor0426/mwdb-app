@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Clone supercharge docs repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: jconnor0426/argocd-monitoring-mwdb
           path: config-repo
@@ -27,3 +27,10 @@ jobs:
       - name: output config repo
         run: |
           ls -r config-repo
+    
+      # Figure out what the new values should be
+      - name: Get submodule container image updates
+        run: |
+          for i in $(find ./submodules -maxdepth 1 -type d); do \
+            echo $i;\
+          done
