@@ -39,6 +39,6 @@ jobs:
             echo Debugging:"${line}"
             SHORT_SHA=$(echo $line | cut -d " " -f 1)
             SHORT_SHA=$(git rev-parse --short $SHORT_SHA)
-            IMAGE=$(echo $line | cut -d " " -f 3 | cut -d "/" -f 2)
+            IMAGE=$(echo $line | cut -d " " -f 2 | cut -d "/" -f 2)
             echo $IMAGE $SHORT_SHA
           done
