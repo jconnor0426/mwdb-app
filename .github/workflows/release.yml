@@ -33,13 +33,11 @@ jobs:
       # Figure out what the new values should be
       - name: Get submodule container image updates
         run: |
-          for submodule_info in $(git submodule status --cached | grep submodules); do 
+          git submodule status --cached | grep submodules > /tmp/submodules.txt
+          for submodule_info in $(cat /tmp/submodules.txt); do 
             echo Debugging:"${submodule_info}"
             SHORT_SHA=$(echo $submodule_info | cut -d " " -f 2)
             SHORT_SHA=$(git rev-parse --short $SHORT_SHA)
             IMAGE=$(echo $submodule_info | cut -d " " -f 3 | cut -d "/" -f 2)
             echo $IMAGE $SHORT_SHA
-
-            
-            
           done
