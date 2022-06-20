@@ -40,5 +40,6 @@ jobs:
             SHORT_SHA=$(echo $line | cut -d " " -f 1)
             SHORT_SHA=$(git rev-parse --short $SHORT_SHA)
             IMAGE=$(echo $line | cut -d " " -f 2 | cut -d "/" -f 2)
-            echo $IMAGE $SHORT_SHA
+            IMAGE_REPLACEMENT=${IMAGE}_VERSION
+            echo $IMAGE_REPLACEMENT $SHORT_SHA
           done
