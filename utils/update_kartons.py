@@ -50,6 +50,10 @@ def update_values_file(name_to_image_tag: dict, path: pathlib.Path):
         if karton["name"] not in name_to_image_tag:
             raise Exception(f"{karton['name']} not in {name_to_image_tag.keys()}")
         karton['imageTag'] = name_to_image_tag[karton['name']]
+
+        name_to_image_tag.pop(karton['name'])
+    if len(name_to_image_tag.keys()) > 0:
+        raise Exception(f"Kartons unaccounted for: {name_to_image_tag.keys()}")
     
     # Dump the updated dict
     with open(path, 'w') as f:
